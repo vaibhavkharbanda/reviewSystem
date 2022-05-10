@@ -1,0 +1,15 @@
+body{
+    background-color: #233142 !important;
+    height: 100%;
+}
+h1{
+    color: red;
+}
+i{
+    font-size: 20rem;
+    color: white;
+}
+
+h3{
+    color: grey;
+}

@@ -1,0 +1,17 @@
+<link rel="stylesheet" href="/css/add_review.css">
+<h3 class="text-center">Reviews you can add for</h3>
+<br>
+<ul>
+    <div class="container">
+        <%var currentUser=locals.user.permission %>
+            <%for(user of users){%>
+                <% if(currentUser.includes(user.id)){ %>
+                    <div id="nameBox">
+                        <a href="/users/profile/<%=user.id%>"><h6 class="text-center ">
+                            <%=user.name%>
+                        </h6></a>
+                    </div>
+    
+    <%}}%>
+</div>
+</ul>

@@ -1,0 +1,48 @@
+<link rel="stylesheet" href="/css/user_profile.css">
+<h1 class="text-center text-white">Reviews of <%=profile_user.name%>
+</h1>
+<%if(user.id==profile_user.id || user.admin){%> 
+    <div id="addBox"><a href="/users/edit/<%=profile_user.id%>" >Edit <%=profile_user.name%></a> </div>
+<%}%>
+<div id="container">
+    <div id="user-profile" class="text-center">
+        <div id="profilePic"><i class="fa-solid fa-user rounded-circle" id="pp" ></i></div>
+        <h3 class="user-details">
+            <%=profile_user.name%>
+        </h3>
+        <h5 id="user-email" class="user-details">
+            <%=profile_user.email%>
+        </h5>
+        <h5 id="emp-code" class="user-details">
+            <%=profile_user.empCode%>
+                </h1>
+                <%if(user.permission.includes(profile_user.id) || user.admin){%>
+                <div id="review-form">
+                    <form action="/reviews/create/<%=profile_user.id%>" method="post">
+                        <textarea name="review" id="review" cols="30" rows="5" placeholder="Add Review...."></textarea><br>
+                        <input type="submit">
+                    </form>
+                </div>
+                <%}%>
+    </div>
+    <div id="user-reviews">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-5 col-md-6 col-12 pb-4">
+                        <h3 class="text-white">Reviews for <%=profile_user.name%></h3>
+                        <%for(reviews of profile_user.myReviews){%>
+                            <!-- here the review will been shown -->
+                        <div id="review-box">
+                            <div id="name-pp">
+                                <i class="fa-solid fa-user  rounded-circle"  id="user-pp"></i>&nbsp; &nbsp; &nbsp;
+                                <h4 ><%=reviews.reviewBy.name%></h4>
+                            </div>
+                            <hr>                          
+                            <p><%=reviews.content%></p>
+                        </div>
+                        <%}%>
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>

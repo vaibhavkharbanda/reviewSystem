@@ -1,0 +1,28 @@
+<h4 class="text-center">All Employees</h4>
+<table class="table bg-dark text-white">
+    <thead>
+      <tr>
+        <th scope="col">Emp Code</th>
+        <th scope="col">Name</th>
+        <th scope="col">View/Edit</th>
+        <th scope="col">Delete</th>
+        <th scope="col">Admin</th>
+      </tr>
+    </thead>
+    <tbody>
+      <%for(emp of employee){%>
+          <tr>
+            <th scope="row"><%= emp.empCode%></th>
+            <td><%= emp.name%></td>
+            <td><a href="/users/profile/<%=emp.id%>">view / edit</a></td>
+            <td><a href="/users/del/<%=emp.id%>">del.</a></td>
+            <%if(!emp.admin){%>
+            <td><a href="/users/make-admin/<%=emp.id%>">Make Admin</a></td>
+            <%}else{%>
+              <td><a href="/users/remove-admin/<%=emp.id%>">Remove Admin</a></td>
+              <%}%>
+          </tr>
+      <%}%>
+      
+    </tbody>
+  </table>

@@ -1,0 +1,20 @@
+<link rel="stylesheet" href="/css/grant_permission.css">
+<h3 class="text-center text-white">Grant Permssion for Review</h3>
+<br>
+<div id="addBox"><a href="/users/add-emp" class="text-center">add employee</a></div>
+<div id="container">
+<%for(profile_user of users){%>
+    <div class="user-profile text-center card">
+        <i class="fa-solid fa-user"></i>
+        <h4><%=profile_user.name%></h4>
+        <form action="/users/grant-permission/<%=profile_user.id%>" method="post">
+            <%for(pUser of users){%>
+                <%if(pUser!==profile_user){%>
+                    <input type="checkbox" id="<%=pUser.name%>" name="userId" value="<%=pUser.id%>">
+                    <label for="<%=pUser.id%>"><%=pUser.name%></label><br>
+                <%}}%>
+                <input type="submit" value="Grant Permission">
+        </form>
+    </div>
+<%}%>
+</div>

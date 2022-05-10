@@ -1,0 +1,25 @@
+.container{
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+}
+#nameBox{
+    /* width: 10%; */
+    height: 4%;
+    margin:10px;
+    border: 1px solid black;
+    background-color: white;
+    border-radius: 10px;
+    
+    
+}
+h6{
+
+    text-align: center;
+    color: black;
+    padding: 10px;
+    
+}
+a{
+    text-decoration: none;
+}

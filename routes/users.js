@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const passport = require('passport');
-const User = require('../../../practice/Codeial/models/user');
+// const User = require('../models/user');
 const userController = require('../controllers/users_controller');
 
 
